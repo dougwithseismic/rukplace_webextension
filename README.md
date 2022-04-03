@@ -8,7 +8,7 @@ Usage
 ## Local Development
 ```yarn start``` Local development. To install, chrome://extensions -> Load Unpacked -> choose dir/dist/
 
-## Local Development
+## Build 
 ```yarn build``` Minified build. To install, chrome://extensions -> Load Unpacked -> choose dir/dist/webext-prod
 
 
