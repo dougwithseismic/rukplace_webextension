@@ -1,0 +1,37 @@
+{
+    "name": "ukplace-flagbot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Doug Silkstone <doug@withseismic.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@parcel/config-webextension": "^2.4.1",
+        "@parcel/transformer-inline-string": "2.4.1",
+        "autoprefixer": "^10.4.4",
+        "buffer": "^6.0.3",
+        "parcel": "^2.4.1",
+        "parcel-plugin-nuke-dist": "^1.0.1",
+        "postcss": "^8.4.12",
+        "tailwindcss": "^3.0.23"
+    },
+    "dependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "toastify-js": "^1.11.2",
+        "webext-bridge": "^5.0.4",
+        "webextension-polyfill": "^0.9.0"
+    },
+    "targets": {
+        "webext-dev": {
+            "sourceMap": {
+                "inline": true,
+                "inlineSources": true
+            }
+        },
+        "webext-prod": {}
+    },
+    "scripts": {
+        "start": "parcel manifest.json --host localhost --port 5000 --hmr-port 5001 --target webext-dev",
+        "build": "parcel build manifest.json --target webext-prod"
+    }
+}

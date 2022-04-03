@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+    "name": "r/UKPlace",
+    "description": "Web extension which can be shipped to multiple browsers.",
+    "version": "0.0.1",
+    "browser_action": {
+        "default_popup": "/src/static/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.reddit.com/r/place/*"
+            ],
+            "js": [
+                "/src/scripts/content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "/src/scripts/background.js"
+        ],
+        "persistent": true
+    },
+    "options_ui": {
+        "page": "/src/static/options.html",
+        "open_in_tab": true
+    },
+    "web_accessible_resources": [
+        "/src/styles/global.css",
+        "https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    ],
+    "permissions": [
+        "tabs",
+        "bookmarks",
+        "unlimitedStorage",
+        "storage",
+        "webNavigation",
+        "notifications"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' blob: filesystem:;object-src 'self' blob: filesystem:;"
+}
